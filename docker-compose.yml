@@ -1,0 +1,60 @@
+version: "3"
+
+services:
+  app:
+    restart: always
+    container_name: santander
+    build: .
+    volumes:
+      - ./:/opt/services/santander/src
+      - static_volume:/opt/services/santander/src/static/  # <-- bind the static volume
+      - media_volume:/opt/services/santander/media/  # <-- bind the media volume
+    command:
+      sh -c "python manage.py wait_for_db &&
+             python manage.py migrate &&
+             gunicorn app.wsgi:application --bind 0.0.0.0:8005"
+    networks:  # <-- here
+      - nginx_network
+      - database1_network
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - KEY_API_WEATHER=${KEY_API_WEATHER}
+    depends_on:
+      - db
+  db:
+    image: postgres:10-alpine
+    container_name: db
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    networks:
+      - database1_network
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - 8005:8005
+    expose:
+      - "8000"
+    volumes:
+      - ./config/nginx/conf.d:/etc/nginx/conf.d
+      - static_volume:/opt/services/santander/src/static/  # <-- bind the static volume
+      - media_volume:/opt/services/santander/media/  # <-- bind the media volume
+    depends_on:
+      - app
+      - db
+    networks:
+      - nginx_network
+networks:  # <-- and here
+  nginx_network:
+    driver: bridge
+  database1_network:
+    driver: bridge
+volumes:
+  static_volume:  # <-- declare the static volume
+  media_volume:  # <-- declare the media volume

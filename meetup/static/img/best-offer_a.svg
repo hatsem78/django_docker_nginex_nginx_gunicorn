@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="31" viewBox="0 0 34 31">
+  <g id="Group_8" data-name="Group 8" opacity="0.391">
+    <g id="Rectangle" transform="translate(11)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.25">
+      <rect width="12" height="31" stroke="none"/>
+      <rect x="0.625" y="0.625" width="10.75" height="29.75" fill="none"/>
+    </g>
+    <g id="Rectangle_Copy_2" data-name="Rectangle Copy 2" transform="translate(22 8)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.25">
+      <rect width="12" height="23" stroke="none"/>
+      <rect x="0.625" y="0.625" width="10.75" height="21.75" fill="none"/>
+    </g>
+    <g id="Rectangle_Copy_3" data-name="Rectangle Copy 3" transform="translate(0 19)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.25">
+      <rect width="12" height="12" stroke="none"/>
+      <rect x="0.625" y="0.625" width="10.75" height="10.75" fill="none"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,100 @@
+{% extends "base_admin.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% block stylesheets %}
+    {{ block.super }}
+    <link href="https://cdn.jsdelivr.net/npm/pc-bootstrap4-datetimepicker@4.17/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+{% endblock stylesheets %}
+{% block content %}
+    <div class="app-title">
+        <div>
+          <h1><i class="fa fa-dashboard"></i> {% trans 'All Notification' %}</h1>
+          <p>{% trans 'List all' %}</p>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+          <li class="breadcrumb-item"><a href="#">{% trans 'All Notification' %}</a></li>
+        </ul>
+    </div>
+    <div class="tile mb-4" id="app_notification_list">
+        <div class="sweet-overlay" tabindex="-1" style="opacity: 1.02; display: block;" v-if="showDeleteNotification"></div>
+        <div class="form-inline form-group tile mb-5" v-if="!showNotification">
+            <label>Search:</label>
+            <input v-model="filterText" class="form-control" @keyup.enter="doFilter"
+                   placeholder="File Name, advertiser, File Name more.">
+            <button class="btn btn-primary" @click="doFilter">Go</button>
+            <button class="btn btn-default" @click="resetFilter">Reset</button>
+       </div>
+        <vuetable
+                v-if="!showNotification"
+                ref="vuetabeNotitication"
+                api-url="{% url 'api:notification:list_page' %}"
+                :fields="fieldes"
+                :append-params="moreParams"
+                :sort-order="sortOrder"
+                :show-sort-icons="true"
+                :css="css.table"
+                pagination-path=""
+                :per-page="3"
+                @vuetable:pagination-data="onPaginationData"
+                @vuetable:loading="onLoading"
+                @vuetable:loaded="onLoaded">
+                <template slot="actions" slot-scope="props">
+                   <div class="table-button-container">
+                       <a class="btn-outline-danger  btn-danger"
+                             @click="deleteRow(props.rowData)"
+                            href="#" data-toggle="tooltip" title="Delete"
+                            >
+                           <i class="fa fa-lg fa-trash"></i>
+                       </a>
+                   </div>
+
+               </template>
+                <template slot="is_seen" slot-scope="props">
+                   <div class="table-button-container">
+
+                       <!--btn-outline-secondary -->
+                       {{ props.rowData.is_seen }}
+                       <a class="btn-outline-secondary" v-if="!props.rowData.is_seen"
+                             @click="isSeenRow(props.rowData)"
+                            href="#" data-toggle="tooltip" title="Not Seen"
+                        >
+                           <i class="fa fa-lg fa fa-eye"></i>
+                       </a>
+
+                       <a v-else="" class="btn-outline-info  btn-info" href="#" data-toggle="tooltip" title="Is Seen">
+                           <i class="fa fa-lg fa fa-eye"></i>
+                       </a>
+                   </div>
+                </template>
+
+           </vuetable>
+
+           <div class="vuetable-pagination ui basic segment grid" v-if="!showNotification">
+                <vuetable-pagination ref="paginationNotification"
+                  :css="css.pagination"
+                  @vuetable-pagination:change-page="onChangePage"
+                ></vuetable-pagination>
+                <br>
+                <br>
+           </div>
+
+            <delete_notification
+                v-if="showDeleteNotification"
+                :show_delete_log="showDeleteNotification"
+                :row_delete="rowDelete"
+                @close_delete="show_notifiation(false)"
+            ></delete_notification>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ block.super }}
+    <script src="{% static '/js/plugins/vue-select.js' %}"></script>
+    <script src="{% static '/js/plugins/vue-bootstrap-datetimepicker.js' %}"></script>
+    <script src="{% static '/js/plugins/bootstrap-datetimepicker.min.js' %}"></script>
+    <script src="{% static '/js/plugins/vue-table.js' %}"></script>
+    <script src="{% static '/js/notification/delete_notification.js' %}"></script>
+    <script src="{% static '/js/notification/notifications_list.js' %}"></script>
+
+{% endblock javascripts %}

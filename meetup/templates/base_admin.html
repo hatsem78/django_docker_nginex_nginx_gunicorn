@@ -1,0 +1,163 @@
+{% load staticfiles %}
+{% load i18n %}
+{% load filter_menu %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="">
+
+    <!-- Open Graph Meta-->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Suite Intellignos">
+    <meta property="og:title" content="Suite Intellignos Administration">
+    <title>Meetup beer</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+     <!-- Font-icon css-->
+    {% block stylesheets %}
+
+    {% endblock stylesheets %}
+
+    {% load static %}
+      <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+      <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="{% static '/css/notify.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+  </head>
+  <body class="app sidebar-mini rtl">
+    {% csrf_token %}
+    <!-- Navbar-->
+    <header class="app-header">
+      <a class="app-header__logo" href="/">
+        <img src="{% static '/img/log_beer.jpg' %}" style="width: 227px;height: 62px;" class="logoD full">
+      </a>
+      <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+      <!-- Navbar Right Menu-->
+      <ul class="app-nav">
+        <!--Notification Menu-->
+        <div id="app_notification">
+             <notifications></notifications>
+        </div>
+
+        <!-- User Menu-->
+        <li class="dropdown">
+          <a class="app-nav__item" href="{% url 'meetup:logout' %}" >
+            <i class="fa fa-sign-out fa-lg"></i>Logout
+          </a>
+
+        </li>
+      </ul>
+
+    </header>
+    <!-- Sidebar menu-->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    <aside class="app-sidebar">
+      <div class="app-sidebar__user">
+          <img class="app-sidebar__user-avatar" src="{% static '/img/avatar.jpg' %}" alt="User Image">
+        <div>
+          <p class="app-sidebar__user-name">{{ user.lastname }} {{ user.name }}</p>
+          <p class="app-sidebar__user-designation"></p>
+        </div>
+      </div>
+      <ul class="app-menu">
+        <li>
+          <a id="dashboard" class="app-menu__item active"
+             href="{% url 'meetup:dashboard' %}">
+            <i class="app-menu__icon fa fa-dashboard"></i>
+            <span class="app-menu__label">Dashboard</span>
+          </a>
+        </li>
+        {% if request.user.is_superuser %}
+          <li>
+              <a class="app-menu__item" id="create_meetup_beer" href="{% url 'meetup:create_meeetup_beer' %}">
+                <i class="app-menu__icon fa fa-file-text"></i>
+                <span class="app-menu__label">Create Meetup beer</span>
+              </a>
+          </li>
+        {% endif %}
+
+        <li>
+            <a class="app-menu__item" id="check_in" href="{% url 'meetup:check_in' %}">
+              <i class="app-menu__icon fa fa-pie-chart"></i>
+              <span class="app-menu__label">list of registered meetups</span>
+            </a>
+        </li>
+
+
+
+
+      </ul>
+    </aside>
+    <div id="app_content">
+         <loading></loading>
+    </div>
+    <main class="app-content">
+
+      {% block content %}
+        <div class="app-title">
+          <div>
+            <h1><i class="fa fa-dashboard"></i> {% trans 'Dashboard' %}</h1>
+
+          </div>
+          <ul class="app-breadcrumb breadcrumb">
+            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+            <li class="breadcrumb-item"><a href="#">{% trans 'Dashboard' %}</a></li>
+          </ul>
+        </div>
+        <div class="row">
+
+        </div>
+
+      {% endblock %}
+    </main>
+     <!-- Essential javascripts for application to work-->
+    <script src="{% static '/js/plugins/vue.js' %}"></script>
+    <script src="{% static '/js/plugins/vuex.js' %}"></script>
+    <script src="{% static '/js/plugins/axios.js' %}"></script>
+    <script src="{% static '/js/plugins/vee-validate.js' %}"></script>
+    <script src="{% static '/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static '/js/plugins/popper.min.js' %}"></script>
+    <script src="{% static '/js/plugins/bootstrap.min.js' %}"></script>
+    <script src="{% static '/js/plugins/notify.js' %}"></script>
+    <script src="{% static '/js/plugins/uiv.js' %}"></script>
+    <script src="{% static '/js/main.js' %}"></script>
+    <script src="{% static '/js/plugins/moment.min.js' %}"></script>
+    <script src="{% static '/js/plugins/v-tooltip.min.js' %}"></script>
+
+
+    <!-- The javascript plugin to display page loading on top-->
+    <script src="{% static '/js/plugins/pace.min.js' %}"></script>
+
+    <!-- Google analytics script-->
+    <script type="text/javascript">
+      const API_PREFIX = '{{ API_PREFIX }}';
+      const URL_STATIC = '/static/';
+      const CRFTOKEN = $("input[name*='csrfmiddlewaretoken']").val();
+      const PRODUCCION = '{{ PRODUCCION }}';
+      const TYPE_USER = '{{ TYPE_USER }}';
+      const USER_ID = '{{ USER_ID }}';
+      const NOTIFICATION_URL = '{% url 'meetup:notification_all' %}';
+
+      if(document.location.hostname == 'pratikborsadiya.in') {
+      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-72504830-1', 'auto');
+      	ga('send', 'pageview');
+      }
+    </script>
+
+    <script src="{% static '/js/common/loading.js' %}"></script>
+    <script src="{% static '/js/common/utils.js' %}"></script>
+    <script src="{% static '/js/common/store.js' %}"></script>
+    <script src="{% static '/js/common/app_content.js' %}"></script>
+    <script src="{% static '/js/notification/notifications.js' %}"></script>
+    {% block javascripts %}
+    {% endblock javascripts %}
+
+  </body>
+</html>
+

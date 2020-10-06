@@ -1,0 +1,43 @@
+{% extends "base_admin.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% block stylesheets %}
+    {{ block.super }}
+    <link href="https://cdn.jsdelivr.net/npm/pc-bootstrap4-datetimepicker@4.17/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+{% endblock stylesheets %}
+{% block content %}
+    <div class="app-title">
+        <div>
+          <h1><i class="fa fa-dashboard"></i> {% trans 'Dashboard' %}</h1>
+          <p>{% trans 'List all Meetup beer' %}</p>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+          <li class="breadcrumb-item"><a href="#">{% trans 'Dashboard' %}</a></li>
+        </ul>
+    </div>
+   <div class="tile mb-4" id="app_dashboard">
+       <template  v-if="{{ action }}">
+           <h2 class="docs-title">{% trans 'Beer meetup list available' %}</h2>
+
+           <dashboard :action=" {{ action }} "></dashboard>
+       </template>
+       <template  v-else>
+            <h2 class="docs-title">{% trans 'List of meetup you can check in' %}</h2>
+            <check_in :action=" {{ action }} "></check_in>
+       </template>
+
+
+   </div>
+{% endblock %}
+{% block javascripts %}
+    {{ block.super }}
+    <script src="{% static '/js/plugins/vue-select.js' %}"></script>
+    <script src="{% static '/js/plugins/vue-bootstrap-datetimepicker.js' %}"></script>
+    <script src="{% static '/js/plugins/bootstrap-datetimepicker.min.js' %}"></script>
+    <script src="{% static '/js/plugins/vue-table.js' %}"></script>
+    <script src="{% static '/js/dashboard/dashboard.js' %}"></script>
+
+
+{% endblock javascripts %}

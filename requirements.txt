@@ -1,0 +1,13 @@
+asgiref==3.2.10
+pytz==2020.1
+sqlparse==0.3.1
+django==2.2.16
+djangorestframework>=3.11.1
+psycopg2>=2.7.5,<2.8.0
+flake8>=3.6.0
+requests
+django-crispy-forms
+psycopg2-binary==2.7.6.1
+gunicorn
+django-rest-swagger==2.1.1
+whitenoise

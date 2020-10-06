@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f3e03d68-33db-414c-b3b9-5b787f388776" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/django_docker_nginex_nginx_gunicorn.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/check_weather/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/check_weather/test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/check_weather/test/test_check_weather_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/check_weather/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/check_weather/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/common.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/meetup/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/meetup/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/meetup/test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/meetup/test/test_meetup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/meetup/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/meetup/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/meetup_enroll_invite_users/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/meetup_enroll_invite_users/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/meetup_enroll_invite_users/test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/meetup_enroll_invite_users/test/test_meetup_enroll_invite_users_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/meetup_enroll_invite_users/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/meetup_enroll_invite_users/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/notification/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/notification/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/notification/test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/notification/test/test_notification.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/notification/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/notification/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/registration_check_in_user/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/registration_check_in_user/test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/registration_check_in_user/test/test_registration_check_in_user_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/registration_check_in_user/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/registration_check_in_user/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/user/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/user/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/user/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/user/tests/test_user_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/user/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/user/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/context_processor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/nginx/conf.d/local.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/management/commands/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/management/commands/wait_for_db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/migrations/0002_meetup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/migrations/0003_auto_20200930_1253.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/migrations/0004_auto_20200930_1901.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/migrations/0005_notification.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/migrations/0006_auto_20201002_0217.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/migrations/0007_auto_20201002_0303.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/migrations/0008_auto_20201002_1546.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/test/test_admins.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/test/test_commands.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/test/test_modules.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/css/notify.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/fonts/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/Costumer-Journey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/arrow-down .svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/arrow-down.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/attribution_a.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/attribution_b.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/audience_a.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/audience_b.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/best-offer_a.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/best-offer_b.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/bull2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/circle-no-activos.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/close.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/customer/tim.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/data-sources_a.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/data-sources_b.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/datastudio.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/dowload_file.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/forecast.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/ic-calendar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/ic-close.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/ic-config.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/ic-cost.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/ic-costofinterest.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/ic-costofreaction.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/ic-impactshift.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/ic-open.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/ic-png.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/ic-question.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/ic-spots.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/ic-tvaudiencereach.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/ic-welcome.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/ic-xls.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/icon-no.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/icon-yes.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/info.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/img/log_beer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/common/app_content.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/common/loading.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/common/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/common/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/dashboard/dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/jquery-3.2.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/list_meetup_beer/create_meetup_beer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/list_meetup_beer/delete_meetup_beer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/list_meetup_beer/list_meetup_beer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/notification/delete_notification.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/notification/notifications.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/notification/notifications_list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/anim.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/anychart-base.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/anychart-bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/anychart-core.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/anychart-treemap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/anychart-waterfall.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/apexcharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/bootstrap-datepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/bootstrap-datetimepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/bootstrap-notify.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/chart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/chart.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/dataTables.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/fullcalendar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/jpreloader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/jquery-1.9.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/jquery-ui.custom.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/jquery.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/jquery.vmap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/jquery.vmap.sampledata.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/jquery.vmap.world.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/lodash.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/moment.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/notify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/pace.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/paginator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/printThis.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/select2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/sweetalert.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/uiv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/v-tooltip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/vee-validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/vue-apexcharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/vue-bootstrap-datetimepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/vue-chartjs.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/vue-select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/vue-table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/vue2-datepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/vuelidate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/plugins/vuex.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/static/js/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/templates/base_admin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/templates/create_meeetup_beer/create_meeetup_beer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/templates/dashboard/dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/templates/notification/notification.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/templates/registration/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/templatetags/filter_menu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetup/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="675">
+                <caret line="98" column="66" selection-start-line="98" selection-start-column="66" selection-end-line="98" selection-end-column="66" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>utilizadas</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/README.md" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="67" />
+    <option name="y" value="27" />
+    <option name="width" value="1263" />
+    <option name="height" value="657" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="django_docker_nginex_nginx_gunicorn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="django_docker_nginex_nginx_gunicorn" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f3e03d68-33db-414c-b3b9-5b787f388776" name="Default Changelist" comment="" />
+      <created>1602000632459</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602000632459</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="67" y="25" width="1853" height="971" extended-state="6" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2495886" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" weight="0.3296433" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="675">
+            <caret line="98" column="66" selection-start-line="98" selection-start-column="66" selection-end-line="98" selection-end-column="66" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
